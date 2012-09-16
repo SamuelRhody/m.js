@@ -39,17 +39,6 @@ int main() {
   p_value.address = (xc_char_t *) &value;
   p_value.length = 0;
 
-  // Set environment variables - not needed if these are already defined in the environment
-  //
-  // PLEASE NOTE - This is only a demonstration program.  You will almost certainly want
-  // other environment variables to be defined in a production environment.
-  //
-  if (NULL == getenv( "gtm_dist" )) putenv( "gtm_dist=/usr/lib/fis-gtm/V5.4-001_x86_64" );
-  if (NULL == getenv( "gtmgbldir" )) putenv("gtmgbldir=/home/kbhaskar/.fis-gtm/V5.4-001_x86_64/g/gtm.gld");
-  if (NULL == getenv( "gtmroutines" )) \
-    putenv("gtmroutines=/home/kbhaskar/.fis-gtm/V5.4-001_x86_64/o(/home/kbhaskar/.fis-gtm/V5.4-001_x86_64/r /home/kbhaskar/.fis-gtm/r) /usr/lib/fis-gtm/V5.4-001_x86_64");
-  if (NULL == getenv( "GTMCI" )) putenv("GTMCI=/home/kbhaskar/demo/gtm_access.ci");
-
   // Initialize GT.M runtime
   CALLGTM( gtm_init() );
 
