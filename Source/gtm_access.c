@@ -1,11 +1,6 @@
 /* This program is a driver to demonstrate a C main() program that calls in to GT.M.
    No claim of copyright is made with respect to this code.
 
-   On x86 GNU/Linux (64-bit Ubuntu 10.10), this program was compiled and run with:
-     gcc -c gtm_access.c -I$gtm_dist
-     gcc gtm_access.o -o gtm_access -L $gtm_dist -Wl,-rpath=$gtm_dist -lgtmshr
-     ./gtm_access ; stty sane
-
    This program is only a demonstration.  Please ensure that you have a correctly
    configured GT.M installation, correctly configured environment variables,
    with appropriate directories and files.
@@ -43,7 +38,7 @@ int main() {
   // Initialization
   p_value.address = (xc_char_t *) &value;
   p_value.length = 0;
-    
+
   // Set environment variables - not needed if these are already defined in the environment
   //
   // PLEASE NOTE - This is only a demonstration program.  You will almost certainly want
@@ -54,7 +49,7 @@ int main() {
   if (NULL == getenv( "gtmroutines" )) \
     putenv("gtmroutines=/home/kbhaskar/.fis-gtm/V5.4-001_x86_64/o(/home/kbhaskar/.fis-gtm/V5.4-001_x86_64/r /home/kbhaskar/.fis-gtm/r) /usr/lib/fis-gtm/V5.4-001_x86_64");
   if (NULL == getenv( "GTMCI" )) putenv("GTMCI=/home/kbhaskar/demo/gtm_access.ci");
- 
+
   // Initialize GT.M runtime
   CALLGTM( gtm_init() );
 
