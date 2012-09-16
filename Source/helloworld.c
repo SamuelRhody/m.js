@@ -14,11 +14,11 @@
  *
  *=========================================================================*/
 
-#include "gtmxc_types.h"
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
+#include "gtmxc_types.h"
 
 // GT.M limits
 #define maxcode 8192     // maximum length of a line of code for the compiler / variable name
